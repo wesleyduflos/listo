@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Listo — Bilan du soir</title>
+<style>
+@font-face{font-family:Geist;src:url(../fonts/Geist-Variable.woff2) format("woff2");font-weight:100 900}
+@font-face{font-family:'Geist Mono';src:url(../fonts/GeistMono-Variable.woff2) format("woff2");font-weight:100 900}
+html,body{background:#d9dbd5}body{display:flex;justify-content:center;padding:0}
+
+body{margin:0}
+a{color:#2443D1}a:hover{color:#1A33A6}
+.mono{font-family:'Geist Mono',ui-monospace,monospace}
+.meta{font-size:12px;color:#5B606B}
+.sec{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5B606B}
+.act{font:inherit;font-size:13px;border-radius:8px;padding:7px 10px;border:1px solid #B9BDB5;background:#fff;color:#15171C}
+</style>
+</head>
+<body>
+<div style="width:390px;height:844px;box-sizing:border-box;background:#F2F3EF;font-family:Geist,system-ui,sans-serif;color:#15171C;display:flex;flex-direction:column;overflow:hidden">
+
+  <header style="padding:56px 20px 20px;display:flex;flex-direction:column;gap:6px">
+    <div class="meta">Jeudi 22 octobre · 21:00</div>
+    <h1 style="margin:0;font-size:30px;font-weight:700;letter-spacing:-.02em">Bilan du soir</h1>
+  </header>
+
+  <main style="flex:1;overflow:hidden;padding:0 20px;display:flex;flex-direction:column;gap:20px">
+
+    <div style="background:#15171C;color:#fff;border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:baseline;gap:10px">
+        <span class="mono" style="font-size:48px;font-weight:500;letter-spacing:-.03em">6/8</span>
+        <span style="font-size:15px;color:#C9CDD4">tâches bouclées</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px">
+        <div style="height:8px;border-radius:2px;background:#9DB0FF"></div><div style="height:8px;border-radius:2px;background:#9DB0FF"></div><div style="height:8px;border-radius:2px;background:#9DB0FF"></div><div style="height:8px;border-radius:2px;background:#9DB0FF"></div><div style="height:8px;border-radius:2px;background:#9DB0FF"></div><div style="height:8px;border-radius:2px;background:#9DB0FF"></div><div style="height:8px;border-radius:2px;background:#3A3F48"></div><div style="height:8px;border-radius:2px;background:#3A3F48"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+        <div style="display:flex;flex-direction:column;gap:2px"><span class="mono" style="font-size:18px">1 h 35</span><span style="font-size:11px;color:#AEB3BC">temps estimé fait</span></div>
+        <div style="display:flex;flex-direction:column;gap:2px"><span class="mono" style="font-size:18px">4/4</span><span style="font-size:11px;color:#AEB3BC">routines</span></div>
+        <div style="display:flex;flex-direction:column;gap:2px"><span class="mono" style="font-size:18px;color:#9DB0FF">12 j</span><span style="font-size:11px;color:#AEB3BC">routines d'affilée</span></div>
+      </div>
+    </div>
+
+    <section style="display:flex;flex-direction:column;gap:10px">
+      <div class="sec">Pas faites aujourd'hui · 2</div>
+      
+        <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+            <span style="font-size:15px;font-weight:500">Photographier la console</span>
+            <span class="meta" style="color:#5B606B">Sans échéance</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="act" style="background:#2443D1;border-color:#2443D1;color:#fff;font-weight:600">Demain</button>
+            <button class="act">Choisir une date</button>
+            <button class="act">Abandonner</button>
+          </div>
+        </div>
+      
+        <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+            <span style="font-size:15px;font-weight:500">Appeler la mutuelle</span>
+            <span class="meta" style="color:#B3401A">En retard depuis hier</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="act" style="background:#2443D1;border-color:#2443D1;color:#fff;font-weight:600">Demain</button>
+            <button class="act">Choisir une date</button>
+            <button class="act">Abandonner</button>
+          </div>
+        </div>
+      
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:6px">
+      <div class="sec">Demain · ven. 23</div>
+      <div style="font-size:14px;color:#15171C">5 tâches · <span class="mono">1 h 05</span> · départ Étretat à 18:00</div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

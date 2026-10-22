@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Listo — Préparation week-end</title>
+<style>
+@font-face{font-family:Geist;src:url(../fonts/Geist-Variable.woff2) format("woff2");font-weight:100 900}
+@font-face{font-family:'Geist Mono';src:url(../fonts/GeistMono-Variable.woff2) format("woff2");font-weight:100 900}
+html,body{background:#d9dbd5}body{display:flex;justify-content:center;padding:0}
+
+body{margin:0}
+a{color:#2443D1}a:hover{color:#1A33A6}
+.mono{font-family:'Geist Mono',ui-monospace,monospace}
+.chk{width:22px;height:22px;border-radius:50%;border:1.5px solid #9AA0A9;background:#fff;padding:0;flex:none;display:flex;align-items:center;justify-content:center}
+.chk.on{background:#2443D1;border-color:#2443D1}
+.box{width:18px;height:18px;border-radius:5px;border:1.5px solid #9AA0A9;background:#fff;padding:0;flex:none;display:flex;align-items:center;justify-content:center}
+.box.on{background:#2443D1;border-color:#2443D1}
+.meta{font-size:12px;color:#5B606B}
+.sec{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5B606B}
+</style>
+</head>
+<body>
+<div style="width:390px;height:844px;box-sizing:border-box;background:#F2F3EF;font-family:Geist,system-ui,sans-serif;color:#15171C;display:flex;flex-direction:column;overflow:hidden">
+
+  <header style="padding:52px 20px 16px;display:flex;flex-direction:column;gap:14px">
+    <a href="#" style="text-decoration:none;font-size:14px;font-weight:500;display:flex;align-items:center;gap:4px"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="#2443D1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Préparations</a>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end">
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <h1 style="margin:0;font-size:26px;font-weight:700;letter-spacing:-.02em">Week-end à Étretat</h1>
+        <div class="meta">Départ ven. 23 oct · 18:00 · modèle « Départ week-end »</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px">
+      <div style="flex:1;background:#15171C;color:#fff;border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px">
+        <span style="font-size:11px;color:#AEB3BC;text-transform:uppercase;letter-spacing:.06em">Départ dans</span>
+        <span class="mono" style="font-size:20px;font-weight:500">1 j 7 h</span>
+      </div>
+      <div style="flex:1;background:#fff;border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px">
+        <span style="font-size:11px;color:#5B606B;text-transform:uppercase;letter-spacing:.06em">Avancement</span>
+        <span class="mono" style="font-size:20px;font-weight:500">5 / 9</span>
+      </div>
+      <div style="flex:1;background:#fff;border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px">
+        <span style="font-size:11px;color:#5B606B;text-transform:uppercase;letter-spacing:.06em">Reste</span>
+        <span class="mono" style="font-size:20px;font-weight:500">45 min</span>
+      </div>
+    </div>
+  </header>
+
+  <main style="flex:1;overflow:hidden;padding:0 20px;display:flex;flex-direction:column;gap:16px">
+
+    <section style="display:flex;flex-direction:column;gap:6px">
+      <div class="sec">J-2 · mer. 21 — fait</div>
+      <div class="meta" style="display:flex;gap:6px;align-items:center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#2443D1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Réserver l'hôtel · Vérifier la météo</div>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:8px">
+      <div class="sec" style="color:#2443D1">J-1 · aujourd'hui</div>
+      <div class="meta" style="display:flex;gap:6px;align-items:center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#2443D1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Lessive · Billets imprimés · Appareil photo chargé</div>
+
+      <div style="background:#fff;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:12px;box-shadow:0 1px 2px rgba(21,23,28,.05)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <button class="chk" aria-label="Terminer la valise"></button>
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px">
+            <div style="font-size:16px;font-weight:600">Faire la valise</div>
+            <div class="meta">Liste « Valise week-end » · <span class="mono">25 min</span></div>
+          </div>
+          <span class="mono" style="font-size:13px;font-weight:500;color:#2443D1">4/12</span>
+        </div>
+        <div style="height:3px;background:#E6E8E3;border-radius:2px;overflow:hidden"><div style="width:33%;height:100%;background:#2443D1"></div></div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px">
+          
+            <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:#8A8F98">
+              <span class="box on"><svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              <span style="text-decoration:line-through">T-shirts ×3</span>
+            </label>
+          
+            <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:#8A8F98">
+              <span class="box on"><svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              <span style="text-decoration:line-through">Trousse de toilette</span>
+            </label>
+          
+            <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:#8A8F98">
+              <span class="box on"><svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              <span style="text-decoration:line-through">Chargeur</span>
+            </label>
+          
+            <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:#8A8F98">
+              <span class="box on"><svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              <span style="text-decoration:line-through">Lunettes de soleil</span>
+            </label>
+          
+            <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:#15171C">
+              <span class="box "></span>
+              <span style="text-decoration:none">Pantalon</span>
+            </label>
+          
+            <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:#15171C">
+              <span class="box "></span>
+              <span style="text-decoration:none">Pull chaud</span>
+            </label>
+          
+            <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:#15171C">
+              <span class="box "></span>
+              <span style="text-decoration:none">Coupe-vent</span>
+            </label>
+          
+            <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:#15171C">
+              <span class="box "></span>
+              <span style="text-decoration:none">Chaussures marche</span>
+            </label>
+          
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #E6E8E3;padding-top:10px">
+          <span class="meta">+ 4 autres articles</span>
+          <a href="#" style="font-size:13px;font-weight:500;text-decoration:none">+ Ajouter un article</a>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #DDE0DA">
+        <button class="chk" aria-label="Terminer"></button>
+        <span style="flex:1;font-size:15px">Vider le lave-vaisselle</span>
+        <span class="mono meta">10 min</span>
+      </div>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:2px">
+      <div class="sec" style="margin-bottom:4px">Jour J · ven. 23 — avant 18:00</div>
+      
+        <div style="display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #DDE0DA">
+          <button class="chk" aria-label="Terminer"></button>
+          <span style="flex:1;font-size:15px">Sortir les poubelles</span>
+          <span class="mono meta">5 min</span>
+        </div>
+      
+        <div style="display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #DDE0DA">
+          <button class="chk" aria-label="Terminer"></button>
+          <span style="flex:1;font-size:15px">Fermer les volets</span>
+          <span class="mono meta">5 min</span>
+        </div>
+      
+    </section>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Listo — Aujourd'hui aéré</title>
+<style>
+@font-face{font-family:Geist;src:url(../fonts/Geist-Variable.woff2) format("woff2");font-weight:100 900}
+@font-face{font-family:'Geist Mono';src:url(../fonts/GeistMono-Variable.woff2) format("woff2");font-weight:100 900}
+html,body{background:#d9dbd5}body{display:flex;justify-content:center;padding:0}
+
+body{margin:0}
+a{color:#2443D1}a:hover{color:#1A33A6}
+.mono{font-family:'Geist Mono',ui-monospace,monospace}
+.chk{width:24px;height:24px;border-radius:50%;border:1.5px solid #9AA0A9;background:#fff;padding:0;flex:none;cursor:pointer}
+.pri{font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;font-weight:500;padding:2px 6px;border-radius:4px;line-height:14px}
+.p1{background:#15171C;color:#fff}
+.p2{background:#DDE0DA;color:#15171C}
+.p3{border:1px solid #B9BDB5;color:#4A4F58}
+.meta{font-size:12px;color:#5B606B}
+.card{background:#fff;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 1px 2px rgba(21,23,28,.05)}
+</style>
+</head>
+<body>
+<div style="width:390px;height:844px;box-sizing:border-box;background:#F2F3EF;font-family:Geist,system-ui,sans-serif;color:#15171C;display:flex;flex-direction:column;overflow:hidden">
+
+  <header style="padding:56px 20px 18px;display:flex;align-items:center;justify-content:space-between">
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <div class="meta">Jeudi 22 octobre</div>
+      <h1 style="margin:0;font-size:30px;font-weight:700;letter-spacing:-.02em">Aujourd'hui</h1>
+    </div>
+    <svg width="56" height="56" viewBox="0 0 56 56" role="img" aria-label="3 tâches sur 8 terminées">
+      <circle cx="28" cy="28" r="23" fill="none" stroke="#DDE0DA" stroke-width="5"></circle>
+      <circle cx="28" cy="28" r="23" fill="none" stroke="#2443D1" stroke-width="5" stroke-linecap="round" stroke-dasharray="54 145" transform="rotate(-90 28 28)"></circle>
+      <text x="28" y="32" text-anchor="middle" font-family="Geist Mono, monospace" font-size="13" font-weight="500" fill="#15171C">3/8</text>
+    </svg>
+  </header>
+
+  <main style="flex:1;overflow:hidden;padding:0 16px;display:flex;flex-direction:column;gap:12px">
+
+    <div class="card" style="background:#FBE7DE;flex-direction:row;align-items:center;gap:14px">
+      <button class="chk" aria-label="Terminer" style="border-color:#B3401A"></button>
+      <div style="flex:1;display:flex;flex-direction:column;gap:3px">
+        <div style="font-size:16px;font-weight:500">Appeler la mutuelle</div>
+        <div class="meta" style="color:#8F3315">En retard · échéance hier</div>
+      </div>
+      <span class="pri p1">P1</span>
+    </div>
+
+    <div class="card" style="background:#15171C;color:#fff;gap:14px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <div style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#AEB3BC">Préparation · J-1</div>
+          <div style="font-size:19px;font-weight:600">Week-end à Étretat</div>
+          <div style="font-size:12px;color:#AEB3BC">Départ demain 18:00</div>
+        </div>
+        <div class="mono" style="font-size:22px;font-weight:500;color:#9DB0FF">5/9</div>
+      </div>
+      <div style="height:4px;background:#2C3038;border-radius:2px;overflow:hidden"><div style="width:55%;height:100%;background:#9DB0FF"></div></div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:12px"><button class="chk" aria-label="Terminer" style="background:transparent;border-color:#6B717C"></button><span style="flex:1;font-size:15px">Faire la valise</span><span class="mono" style="font-size:12px;color:#AEB3BC">4/12 · 25 min</span></div>
+        <div style="display:flex;align-items:center;gap:12px"><button class="chk" aria-label="Terminer" style="background:transparent;border-color:#6B717C"></button><span style="flex:1;font-size:15px">Vider le lave-vaisselle</span><span class="mono" style="font-size:12px;color:#AEB3BC">10 min</span></div>
+      </div>
+    </div>
+
+    <div class="card" style="gap:0;padding:4px 16px">
+      
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #E6E8E3">
+          <button class="chk" aria-label="Terminer"></button>
+          <div style="flex:1;display:flex;flex-direction:column;gap:3px">
+            <div style="font-size:16px;font-weight:500">Prendre RDV coiffeur</div>
+            <div class="meta">Avant sam. 25 · <span class="mono">5 min</span></div>
+          </div>
+          <span class="pri p2">P2</span>
+        </div>
+      
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #E6E8E3">
+          <button class="chk" aria-label="Terminer"></button>
+          <div style="flex:1;display:flex;flex-direction:column;gap:3px">
+            <div style="font-size:16px;font-weight:500">Acheter des croquettes</div>
+            <div class="meta">Avant ven. 23 · <span class="mono">20 min</span></div>
+          </div>
+          <span class="pri p2">P2</span>
+        </div>
+      
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:0">
+          <button class="chk" aria-label="Terminer"></button>
+          <div style="flex:1;display:flex;flex-direction:column;gap:3px">
+            <div style="font-size:16px;font-weight:500">Photographier la console</div>
+            <div class="meta">Vendre la console · <span class="mono">15 min</span></div>
+          </div>
+          <span class="pri p3">P3</span>
+        </div>
+      
+    </div>
+
+    <div style="display:flex;gap:8px;align-items:center;padding:2px 4px">
+      <span class="meta" style="flex:1">Routines · 2/4 faites</span>
+      <span class="meta">3 terminées ›</span>
+    </div>
+  </main>
+
+  <nav style="display:flex;align-items:center;justify-content:space-around;padding:12px 8px 26px;background:#F2F3EF;border-top:1px solid #DDE0DA">
+    <a href="#" style="text-decoration:none;font-size:11px;font-weight:600;color:#2443D1">Aujourd'hui</a>
+    <a href="#" style="text-decoration:none;font-size:11px;font-weight:500;color:#5B606B">Horizons</a>
+    <a href="#" aria-label="Ajouter une tâche" style="width:52px;height:52px;border-radius:16px;background:#2443D1;display:flex;align-items:center;justify-content:center;margin-top:-22px;box-shadow:0 6px 18px rgba(36,67,209,.35)"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path></svg></a>
+    <a href="#" style="text-decoration:none;font-size:11px;font-weight:500;color:#5B606B">Préparations</a>
+    <a href="#" style="text-decoration:none;font-size:11px;font-weight:500;color:#5B606B">Routines</a>
+  </nav>
+</div>
+</body>
+</html>
