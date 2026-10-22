@@ -1,0 +1,119 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 28px 20px 22px;
+  border-radius: 22px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.counter {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.big {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.bigLabel {
+  font-size: 15px;
+  color: var(--dark-text-soft);
+}
+
+.cells {
+  display: flex;
+  gap: 4px;
+}
+
+.cell {
+  flex: 1;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--dark-cell);
+}
+
+.cellDone {
+  background: var(--accent-on-dark);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+}
+
+.stats dt {
+  font-size: 12px;
+  color: var(--dark-muted);
+}
+
+.stats dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.accent {
+  color: var(--accent-on-dark);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.cardTitle {
+  font-size: var(--fs-task);
+  font-weight: 500;
+}
+
+.cardMeta {
+  flex: none;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.late {
+  color: var(--late);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.buttons > button {
+  padding: 0 12px;
+  font-size: 14.5px;
+}
+
+.tomorrow {
+  padding: 0 4px;
+  font-size: var(--fs-body);
+}
