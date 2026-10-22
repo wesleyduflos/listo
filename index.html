@@ -12,9 +12,22 @@
     <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <title>Listo</title>
+    <style>
+      html,body{margin:0;background:#f2f3ef;color:#15171c;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+      .splash{min-height:100dvh;max-width:420px;margin:0 auto;padding:80px 24px 40px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px}
+      .splash img{border-radius:20px}
+      .splash h1{margin:0;font-size:40px;font-weight:700;letter-spacing:-.03em}
+      .splash p{margin:0;font-size:17px;color:#5b606b}
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="splash" aria-busy="true">
+        <img src="/icons/icon.svg" alt="" width="88" height="88" />
+        <h1>Listo</h1>
+        <p>Vos listes, prêtes à temps.</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
