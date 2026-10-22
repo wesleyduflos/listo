@@ -1,10 +1,15 @@
 import {
+  createUserWithEmailAndPassword,
   GoogleAuthProvider,
+  sendPasswordResetEmail,
   signInWithCredential,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signInWithRedirect,
 } from 'firebase/auth';
 import { auth, useEmulators } from '../../lib/firebase';
+
+auth.languageCode = 'fr';
 
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
@@ -36,4 +41,16 @@ export async function signInTestUser(): Promise<void> {
     name: 'Test Listo',
   });
   await signInWithCredential(auth, GoogleAuthProvider.credential(token));
+}
+
+export async function signInWithEmail(email: string, password: string): Promise<void> {
+  await signInWithEmailAndPassword(auth, email.trim(), password);
+}
+
+export async function signUpWithEmail(email: string, password: string): Promise<void> {
+  await createUserWithEmailAndPassword(auth, email.trim(), password);
+}
+
+export async function resetPassword(email: string): Promise<void> {
+  await sendPasswordResetEmail(auth, email.trim());
 }

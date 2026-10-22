@@ -1,4 +1,5 @@
 import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 import { useActions, useAuth, useData } from '../../data/DataProvider';
 import type { Priority } from '../../domain/types';
 import { auth } from '../../lib/firebase';
@@ -20,6 +21,7 @@ export function SettingsScreen() {
   const { settings, sync } = useData();
   const { user } = useAuth();
   const actions = useActions();
+  const navigate = useNavigate();
 
   const exportJson = async () => {
     const data = await actions.exportAll();
@@ -95,7 +97,14 @@ export function SettingsScreen() {
             <span className={styles.rowHint}>{user?.email}</span>
           </span>
         </div>
-        <Button variant="danger" onClick={() => signOut(auth)}>
+        <Button
+          variant="danger"
+          onClick={() => {
+            // Back to the home route first, so the next sign-in lands on Today.
+            navigate('/', { replace: true });
+            void signOut(auth);
+          }}
+        >
           <Icon name="logOut" size={18} /> Se déconnecter
         </Button>
       </Card>
