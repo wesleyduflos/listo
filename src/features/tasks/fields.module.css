@@ -1,0 +1,44 @@
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.inline > input[type='date'] {
+  flex: 1 1 150px;
+}
+
+.inline > input[type='time'] {
+  flex: 0 1 120px;
+}
+
+.narrow {
+  width: 84px;
+  flex: none;
+}
+
+.unit {
+  width: auto;
+  flex: none;
+}
+
+.clear {
+  min-height: var(--tap);
+  padding: 0 8px;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hint {
+  font-size: var(--fs-meta);
+  color: var(--muted);
+}
