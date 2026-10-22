@@ -25,7 +25,11 @@ describe('todayView', () => {
 
   it('groups every open task once', () => {
     const g = groupTasks(
-      [makeTask({ horizon: 'someday' }), makeTask({ dueAt: at(12, 1) }), makeTask({ dueAt: at(10, 28) })],
+      [
+        makeTask({ horizon: 'someday' }),
+        makeTask({ dueAt: at(12, 1) }),
+        makeTask({ dueAt: at(10, 28) }),
+      ],
       NOW,
     );
     expect(g.someday).toHaveLength(1);

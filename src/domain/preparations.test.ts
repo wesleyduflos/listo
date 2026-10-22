@@ -16,16 +16,61 @@ let n = 0;
 const id = () => `id${++n}`;
 
 const steps: PrepStep[] = [
-  { id: 's1', title: "Réserver l'hôtel", offsetDays: -2, timeHint: null, priority: 2, estimateMin: 10, listId: null },
-  { id: 's2', title: 'Faire la valise', offsetDays: -1, timeHint: '20:00', priority: 1, estimateMin: 25, listId: 'valise' },
-  { id: 's3', title: 'Fermer les volets', offsetDays: 0, timeHint: null, priority: 2, estimateMin: 5, listId: null },
-  { id: 's4', title: 'Arroser', offsetDays: 0, timeHint: '20:00', priority: 3, estimateMin: 5, listId: null },
-  { id: 's5', title: 'Courses', offsetDays: 0, timeHint: '10:00', priority: 2, estimateMin: 30, listId: null },
+  {
+    id: 's1',
+    title: "Réserver l'hôtel",
+    offsetDays: -2,
+    timeHint: null,
+    priority: 2,
+    estimateMin: 10,
+    listId: null,
+  },
+  {
+    id: 's2',
+    title: 'Faire la valise',
+    offsetDays: -1,
+    timeHint: '20:00',
+    priority: 1,
+    estimateMin: 25,
+    listId: 'valise',
+  },
+  {
+    id: 's3',
+    title: 'Fermer les volets',
+    offsetDays: 0,
+    timeHint: null,
+    priority: 2,
+    estimateMin: 5,
+    listId: null,
+  },
+  {
+    id: 's4',
+    title: 'Arroser',
+    offsetDays: 0,
+    timeHint: '20:00',
+    priority: 3,
+    estimateMin: 5,
+    listId: null,
+  },
+  {
+    id: 's5',
+    title: 'Courses',
+    offsetDays: 0,
+    timeHint: '10:00',
+    priority: 2,
+    estimateMin: 30,
+    listId: null,
+  },
 ];
 
 describe('preparation instantiation', () => {
   it('computes deadlines backwards from the departure', () => {
-    const drafts = instantiateSteps(steps, DEPART, { valise: [{ id: 'a', label: 'T-shirts', qty: 3 }] }, id);
+    const drafts = instantiateSteps(
+      steps,
+      DEPART,
+      { valise: [{ id: 'a', label: 'T-shirts', qty: 3 }] },
+      id,
+    );
     expect(dayKey(drafts[0].dueAt!)).toBe('2026-10-21');
     expect(drafts[0].dueHasTime).toBe(false);
     expect(timeOfDay(drafts[0].dueAt!)).toBe('23:59');
@@ -40,8 +85,15 @@ describe('preparation instantiation', () => {
   });
 
   it('copies the attached list as an unchecked checklist', () => {
-    const [, valise] = instantiateSteps(steps, DEPART, { valise: [{ id: 'a', label: 'T-shirts', qty: 3 }] }, id);
-    expect(valise.checklist).toEqual([{ id: expect.any(String), label: 'T-shirts', qty: 3, done: false }]);
+    const [, valise] = instantiateSteps(
+      steps,
+      DEPART,
+      { valise: [{ id: 'a', label: 'T-shirts', qty: 3 }] },
+      id,
+    );
+    expect(valise.checklist).toEqual([
+      { id: expect.any(String), label: 'T-shirts', qty: 3, done: false },
+    ]);
     expect(valise.sourceListId).toBe('valise');
   });
 

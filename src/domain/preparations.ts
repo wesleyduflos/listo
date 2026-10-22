@@ -132,8 +132,6 @@ export function prepTimeline(tasks: Task[], departAt: Date): PrepDay[] {
     .map(([offset, list]) => ({
       offset,
       day: addDaysTz(departAt, offset),
-      tasks: list.sort(
-        (a, b) => a.dueAt!.getTime() - b.dueAt!.getTime() || a.order - b.order,
-      ),
+      tasks: list.sort((a, b) => a.dueAt!.getTime() - b.dueAt!.getTime() || a.order - b.order),
     }));
 }

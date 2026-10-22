@@ -23,7 +23,9 @@ export function buildMorningMessage(tasks: Task[], now: Date): PushMessage | nul
   const minutes = sumEstimates(open);
   const title = `Aujourd'hui · ${plural(open.length, 'tâche')}${minutes ? ` · ${formatDuration(minutes)}` : ''}`;
   const highlighted = open.filter((t) => v.late.includes(t) || t.priority === 1);
-  const lines = highlighted.slice(0, MAX_LINES).map((t) => (v.late.includes(t) ? `${t.title} (en retard)` : t.title));
+  const lines = highlighted
+    .slice(0, MAX_LINES)
+    .map((t) => (v.late.includes(t) ? `${t.title} (en retard)` : t.title));
   if (highlighted.length > MAX_LINES) lines.push(`+ ${highlighted.length - MAX_LINES} autres`);
   return {
     title,
@@ -42,7 +44,11 @@ export function buildEveningMessage(
   const pending = v.total - v.doneCount;
   if (pending === 0) {
     if (!congratsEnabled) return null;
-    return { title: 'Journée bouclée', body: `${plural(v.doneCount, 'tâche')} faites aujourd'hui.`, link: '/bilan' };
+    return {
+      title: 'Journée bouclée',
+      body: `${plural(v.doneCount, 'tâche')} faites aujourd'hui.`,
+      link: '/bilan',
+    };
   }
   return {
     title: `Bilan · ${v.doneCount}/${v.total} bouclées`,

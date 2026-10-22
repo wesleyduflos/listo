@@ -7,7 +7,15 @@ const p = (s: string) => parseCapture(s, NOW);
 const day = (d: Date | null) => (d ? dayKey(d) : null);
 
 describe('parseCapture — reference table (§6)', () => {
-  const cases: [string, string, string | null, number | null, number | null, string | null, string?][] = [
+  const cases: [
+    string,
+    string,
+    string | null,
+    number | null,
+    number | null,
+    string | null,
+    string?,
+  ][] = [
     ['coiffeur samedi p2 15min', 'Coiffeur', '2026-10-24', 2, 15, null],
     ['vendre la console un jour', 'Vendre la console', null, null, null, 'someday'],
     ['croquettes demain !!', 'Croquettes', '2026-10-23', 2, null, null],

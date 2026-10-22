@@ -19,7 +19,9 @@ describe('format', () => {
   });
 
   it('describes recurrences', () => {
-    expect(recurrenceLabel({ mode: 'flex', minDays: 35, maxDays: 42 })).toBe('Récurrent ~ 5–6 sem.');
+    expect(recurrenceLabel({ mode: 'flex', minDays: 35, maxDays: 42 })).toBe(
+      'Récurrent ~ 5–6 sem.',
+    );
     expect(recurrenceLabel({ mode: 'fixed', every: 2, unit: 'week' })).toBe('Tous les 2 semaines');
     expect(recurrenceLabel({ mode: 'fixed', every: 1, unit: 'month' })).toBe('Chaque mois');
   });

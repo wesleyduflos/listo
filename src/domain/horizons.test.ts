@@ -18,7 +18,9 @@ describe('effectiveHorizon', () => {
     expect(isLate(t, NOW)).toBe(true);
     expect(effectiveHorizon(t, NOW)).toBe('late');
     expect(effectiveHorizon(makeTask({ dueAt: at(10, 22, 9) }), NOW)).toBe('late');
-    expect(effectiveHorizon(makeTask({ horizon: 'today', createdAt: at(1, 1) }), NOW)).toBe('today');
+    expect(effectiveHorizon(makeTask({ horizon: 'today', createdAt: at(1, 1) }), NOW)).toBe(
+      'today',
+    );
     expect(isLate(makeTask({ dueAt: at(10, 21), status: 'done' }), NOW)).toBe(false);
   });
 

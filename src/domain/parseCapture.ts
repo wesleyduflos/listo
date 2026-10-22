@@ -1,4 +1,4 @@
-import * as chrono from 'chrono-node';
+import * as chronoFr from 'chrono-node/fr';
 import {
   addDaysTz,
   addMonthsTz,
@@ -49,7 +49,15 @@ const MONTHS: [RegExp, number][] = [
 ];
 const MONTH_RE =
   'janv(?:ier)?|fevr?(?:ier)?|mars|avr(?:il)?|mai|juin|juil(?:let)?|aout|sept?(?:embre)?|oct(?:obre)?|nov(?:embre)?|dec(?:embre)?';
-const NUMBER_WORDS: Record<string, number> = { un: 1, une: 1, deux: 2, trois: 3, quatre: 4, cinq: 5, six: 6 };
+const NUMBER_WORDS: Record<string, number> = {
+  un: 1,
+  une: 1,
+  deux: 2,
+  trois: 3,
+  quatre: 4,
+  cinq: 5,
+  six: 6,
+};
 const B = '(?<![a-z0-9])';
 const E = '(?![a-z0-9])';
 /** Optional time after a date: "18h", "à 18h30", "vers 9 h", "18:30". */
@@ -200,17 +208,24 @@ export function parseCapture(input: string, now: Date): ParsedCapture {
     `${B}(?:(?:ce|le)\\s+)?(${WEEKDAYS.join('|')})(?:\\s+prochaine?)?${E}${TIME_SUFFIX}`,
   )) {
     const target = WEEKDAYS.indexOf(m.groups[0]!) + 1;
-    const delta = ((target - isoWeekdayTz(now) + 7) % 7) || 7;
+    const delta = (target - isoWeekdayTz(now) + 7) % 7 || 7;
     setDate(addDaysTz(now, delta), m, 1);
   }
   for (const m of s.find(
     `${B}(?:le\\s+)?(\\d{1,2})(?:er)?\\s+(${MONTH_RE})\\.?(?:\\s+(\\d{4}))?${E}${TIME_SUFFIX}`,
   )) {
-    const d = nextDayMonth(Number(m.groups[0]), monthNumber(m.groups[1]!), now, m.groups[2] ? Number(m.groups[2]) : undefined);
+    const d = nextDayMonth(
+      Number(m.groups[0]),
+      monthNumber(m.groups[1]!),
+      now,
+      m.groups[2] ? Number(m.groups[2]) : undefined,
+    );
     if (d) setDate(d, m, 3);
   }
   for (const m of s.find(`${B}(\\d{1,2})/(\\d{1,2})(?:/(\\d{2,4}))?${E}${TIME_SUFFIX}`)) {
-    const y = m.groups[2] ? Number(m.groups[2].length === 2 ? `20${m.groups[2]}` : m.groups[2]) : undefined;
+    const y = m.groups[2]
+      ? Number(m.groups[2].length === 2 ? `20${m.groups[2]}` : m.groups[2])
+      : undefined;
     const d = nextDayMonth(Number(m.groups[0]), Number(m.groups[1]), now, y);
     if (d) setDate(d, m, 3);
   }
@@ -267,7 +282,7 @@ export function parseCapture(input: string, now: Date): ParsedCapture {
   // Fallback: chrono-node (fr) for numeric expressions the house rules do not cover.
   if (!dueAt) {
     const rest = s.rest();
-    for (const r of chrono.fr.parse(rest, now, { forwardDate: true })) {
+    for (const r of chronoFr.parse(rest, now, { forwardDate: true })) {
       if (!/\d/.test(r.text)) continue;
       const start = r.index;
       const end = start + r.text.length;
@@ -303,6 +318,9 @@ function cleanTitle(rest: string): string {
   while (words.length > 1 && TRAILING_CONNECTORS.has(words[words.length - 1].toLowerCase())) {
     words.pop();
   }
-  const title = words.join(' ').replace(/\s+([,.;:])/g, '$1').replace(/^[,.;:\s]+|[,;:\s]+$/g, '');
+  const title = words
+    .join(' ')
+    .replace(/\s+([,.;:])/g, '$1')
+    .replace(/^[,.;:\s]+|[,;:\s]+$/g, '');
   return title.charAt(0).toUpperCase() + title.slice(1);
 }

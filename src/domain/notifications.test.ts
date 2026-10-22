@@ -10,7 +10,9 @@ describe('notifications', () => {
       makeTask({ title: 'Mutuelle', priority: 1, dueAt: endOfDayTz(at(10, 21)), estimateMin: 10 }),
       makeTask({ title: 'Banque', priority: 1, horizon: 'today', estimateMin: 60 }),
       makeTask({ title: 'Plantes', priority: 3, horizon: 'today' }),
-      ...Array.from({ length: 6 }, (_, i) => makeTask({ title: `P1-${i}`, priority: 1, horizon: 'today' })),
+      ...Array.from({ length: 6 }, (_, i) =>
+        makeTask({ title: `P1-${i}`, priority: 1, horizon: 'today' }),
+      ),
     ];
     const m = buildMorningMessage(tasks, NOW)!;
     expect(m.title).toBe("Aujourd'hui · 9 tâches · 1 h 10");
