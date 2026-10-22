@@ -1,0 +1,35 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Firebase Auth helper pages served from the app's own domain, so Google sign-in keeps
+# working in iOS standalone PWAs (set VITE_FIREBASE_AUTH_DOMAIN to the Netlify domain).
+# Replace YOUR_PROJECT_ID with the Firebase project id.
+[[redirects]]
+  from = "/__/auth/*"
+  to = "https://YOUR_PROJECT_ID.firebaseapp.com/__/auth/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
