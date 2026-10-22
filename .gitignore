@@ -7,3 +7,4 @@ dev-dist
 .firebase
 coverage
 firestore-debug.log
+.netlify
