@@ -1,0 +1,83 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 16px 12px;
+  border-radius: var(--radius-card);
+  background: var(--ink);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.overline {
+  font-size: var(--fs-overline);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dark-muted);
+}
+
+.name {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.depart {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--dark-muted);
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--accent-on-dark);
+}
+
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.stepsLabel {
+  font-size: var(--fs-meta);
+  color: var(--dark-muted);
+  padding-top: 2px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 46px;
+  transition: opacity 300ms;
+}
+
+.leaving {
+  opacity: 0.4;
+}
+
+.stepTitle {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--fs-body);
+}
+
+.stepMeta {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--dark-muted);
+}

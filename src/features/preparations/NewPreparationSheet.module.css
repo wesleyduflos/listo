@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inline {
+  display: flex;
+  gap: 8px;
+}
+
+.inline input[type='date'] {
+  flex: 1;
+}
+
+.inline input[type='time'] {
+  width: 120px;
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--muted);
+}

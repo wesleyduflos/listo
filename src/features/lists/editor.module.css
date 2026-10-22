@@ -1,0 +1,96 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius-card-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.line > input {
+  flex: 1;
+  min-width: 0;
+}
+
+.qty {
+  width: 72px !important;
+  flex: none !important;
+}
+
+.small {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.small select,
+.small input {
+  width: auto;
+  min-height: 40px;
+  padding: 6px 10px;
+  font-size: 15px;
+}
+
+.tools {
+  display: flex;
+  flex: none;
+}
+
+.tool {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--muted);
+}
+
+.tool:hover:not(:disabled) {
+  background: var(--surface-sunken);
+  color: var(--ink);
+}
+
+.tool:disabled {
+  opacity: 0.3;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  padding: 0 16px;
+}
+
+.small .minutes {
+  width: 80px;
+}
