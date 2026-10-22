@@ -1,0 +1,59 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    function optionalTimestamp(d, field) {
+      return !(field in d) || d[field] == null || d[field] is timestamp;
+    }
+
+    function validTask(d) {
+      return d.keys().hasAll(['title', 'status', 'priority'])
+        && d.title is string && d.title.size() > 0 && d.title.size() <= 500
+        && d.status in ['open', 'done', 'abandoned']
+        && d.priority in [1, 2, 3]
+        && (!('horizon' in d) || d.horizon == null || d.horizon in ['today', 'week', 'month', 'someday'])
+        && (!('notes' in d) || d.notes == null || (d.notes is string && d.notes.size() <= 10000))
+        && (!('estimateMin' in d) || d.estimateMin == null || (d.estimateMin is number && d.estimateMin >= 0))
+        && (!('checklist' in d) || (d.checklist is list && d.checklist.size() <= 300))
+        && (!('order' in d) || d.order is number)
+        && (!('dueHasTime' in d) || d.dueHasTime is bool)
+        && optionalTimestamp(d, 'dueAt')
+        && optionalTimestamp(d, 'availableAt')
+        && optionalTimestamp(d, 'completedAt')
+        && optionalTimestamp(d, 'abandonedAt');
+    }
+
+    match /users/{uid} {
+      allow read, write: if isOwner(uid);
+
+      match /tasks/{taskId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid) && validTask(request.resource.data);
+      }
+
+      match /routines/{routineId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && request.resource.data.title is string
+          && request.resource.data.weekdays is list;
+      }
+
+      match /routineDays/{day} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && day.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && request.resource.data.planned is list
+          && request.resource.data.done is list;
+      }
+
+      match /{collection}/{docId} {
+        allow read, write: if isOwner(uid)
+          && collection in ['lists', 'prepTemplates', 'preparations', 'fcmTokens', 'meta'];
+      }
+    }
+  }
+}
