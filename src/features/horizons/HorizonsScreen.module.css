@@ -1,0 +1,22 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-card);
+  transition: background-color 120ms;
+}
+
+.drop {
+  background: var(--accent-soft);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 4px;
+}
+
+.dropHint {
+  padding: 16px 4px;
+  color: var(--accent);
+  font-size: 14px;
+}

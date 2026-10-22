@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.text {
+  font-size: var(--fs-body);
+  line-height: 1.45;
+  color: var(--accent-hover);
+}
+
+.text strong {
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
