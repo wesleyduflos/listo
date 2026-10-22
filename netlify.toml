@@ -7,10 +7,9 @@
 
 # Firebase Auth helper pages served from the app's own domain, so Google sign-in keeps
 # working in iOS standalone PWAs (set VITE_FIREBASE_AUTH_DOMAIN to the Netlify domain).
-# Replace YOUR_PROJECT_ID with the Firebase project id.
 [[redirects]]
   from = "/__/auth/*"
-  to = "https://YOUR_PROJECT_ID.firebaseapp.com/__/auth/:splat"
+  to = "https://listo-wd.firebaseapp.com/__/auth/:splat"
   status = 200
   force = true
 

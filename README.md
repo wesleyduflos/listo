@@ -29,7 +29,7 @@ En mode émulateur, l'écran de connexion propose « Connexion de test » (aucun
 5. Déployer règles et index :
 
 ```bash
-cp .firebaserc.example .firebaserc     # renseigner l'id du projet
+# .firebaserc pointe déjà sur le projet listo-wd
 npx firebase login
 npx firebase deploy --only firestore
 ```
