@@ -46,6 +46,11 @@ export function setWriteErrorHandler(fn: (e: unknown) => void) {
   onError = fn;
 }
 
+/** Rejected reads and writes share the same handler. */
+export function reportDataError(e: unknown) {
+  onError(e);
+}
+
 // Writes are never awaited by the UI: with the persistent cache they apply locally at once
 // and their promise only settles when the server acknowledges (possibly much later).
 const fire = (p: Promise<unknown>) => {

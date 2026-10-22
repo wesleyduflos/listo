@@ -31,7 +31,7 @@ import {
   type Task,
 } from '../domain/types';
 import { auth } from '../lib/firebase';
-import { createActions, type Actions } from './actions';
+import { createActions, reportDataError, type Actions } from './actions';
 import {
   listFromDoc,
   prepFromDoc,
@@ -114,10 +114,18 @@ export function DataProvider({ uid, children }: { uid: string; children: ReactNo
       target: Query | DocumentReference,
       cb: (snap: T) => void,
     ): Unsubscribe =>
-      onSnapshot(target as Query, { includeMetadataChanges: true }, (snap) => {
-        track(k, snap.metadata.hasPendingWrites);
-        cb(snap as unknown as T);
-      });
+      onSnapshot(
+        target as Query,
+        { includeMetadataChanges: true },
+        (snap) => {
+          track(k, snap.metadata.hasPendingWrites);
+          cb(snap as unknown as T);
+        },
+        (e) => {
+          reportDataError(e);
+          markLoaded(k);
+        },
+      );
     let openTasks: Task[] = [];
     let recent: Task[] = [];
     const pushTasks = () =>
