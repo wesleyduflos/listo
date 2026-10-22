@@ -380,19 +380,6 @@ export function createActions(uid: string) {
     fire(batch.commit());
   }
 
-  async function saveFcmToken(token: string) {
-    const now = ts(new Date());
-    await setDoc(sub(uid, 'fcmTokens', token), {
-      createdAt: now,
-      lastSeenAt: now,
-      userAgent: navigator.userAgent,
-    });
-  }
-
-  async function deleteFcmToken(token: string) {
-    await deleteDoc(sub(uid, 'fcmTokens', token));
-  }
-
   async function exportAll(): Promise<Record<string, unknown>> {
     const names = [
       'tasks',
@@ -443,8 +430,6 @@ export function createActions(uid: string) {
     writeRoutineDays,
     updateSettings,
     seed,
-    saveFcmToken,
-    deleteFcmToken,
     exportAll,
   };
 }

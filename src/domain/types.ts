@@ -99,10 +99,6 @@ export interface Preparation {
 
 export interface Settings {
   timezone: string;
-  morningNotifTime: string;
-  eveningNotifTime: string;
-  notificationsEnabled: boolean;
-  eveningCongratsEnabled: boolean;
   somedayNudgeDays: number;
   defaultPriority: Priority;
   seeded: boolean;
@@ -110,10 +106,6 @@ export interface Settings {
 
 export const DEFAULT_SETTINGS: Settings = {
   timezone: 'Europe/Paris',
-  morningNotifTime: '08:00',
-  eveningNotifTime: '21:00',
-  notificationsEnabled: false,
-  eveningCongratsEnabled: true,
   somedayNudgeDays: 30,
   defaultPriority: 2,
   seeded: false,

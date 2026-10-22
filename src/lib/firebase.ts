@@ -25,7 +25,6 @@ export const firebaseConfig = {
   appId: env.VITE_FIREBASE_APP_ID,
 };
 
-export const vapidKey: string | undefined = env.VITE_FIREBASE_VAPID_KEY || undefined;
 export const firebaseConfigured = Boolean(firebaseConfig.apiKey && firebaseConfig.projectId);
 
 export const app = initializeApp(

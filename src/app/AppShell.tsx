@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import { useActions, useData } from '../data/DataProvider';
+import { useData } from '../data/DataProvider';
 import { BottomNav, Icon } from '../ui';
 import { CaptureSheet } from '../features/capture/CaptureSheet';
 import { TaskCompletionProvider } from '../features/tasks/useTaskCompletion';
@@ -11,8 +11,7 @@ const TABS = ['/', '/horizons', '/preparations', '/routines'];
 export function AppShell() {
   const { pathname } = useLocation();
   const [capturing, setCapturing] = useState(false);
-  const { sync, settings, ready } = useData();
-  const actions = useActions();
+  const { sync } = useData();
   const showNav = TABS.includes(pathname);
 
   // "n" opens the quick capture on desktop.
@@ -27,15 +26,6 @@ export function AppShell() {
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, []);
-
-  // Keep this device's push token fresh (lastSeenAt) when notifications are on.
-  useEffect(() => {
-    if (!ready || !settings.notificationsEnabled) return;
-    import('../features/settings/push')
-      .then((m) => m.refreshPushToken())
-      .then((token) => (token ? actions.saveFcmToken(token) : undefined))
-      .catch(() => undefined);
-  }, [ready, settings.notificationsEnabled, actions]);
 
   return (
     <TaskCompletionProvider>

@@ -52,7 +52,7 @@ service cloud.firestore {
 
       match /{collection}/{docId} {
         allow read, write: if isOwner(uid)
-          && collection in ['lists', 'prepTemplates', 'preparations', 'fcmTokens', 'meta'];
+          && collection in ['lists', 'prepTemplates', 'preparations'];
       }
     }
   }
