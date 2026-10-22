@@ -1,0 +1,144 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  outline: none;
+}
+
+.input:focus-visible {
+  outline: none;
+}
+
+.input::placeholder {
+  color: #a3a8b0;
+  font-weight: 500;
+}
+
+.understood {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  font-size: 15px;
+  font-weight: 500;
+  max-width: 100%;
+}
+
+span.chip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeholder {
+  opacity: 0.6;
+}
+
+.outline {
+  background: var(--surface);
+  border-color: #c8ccc4;
+  color: var(--chip-p3-text);
+}
+
+.prio {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.p1 {
+  background: var(--ink);
+  color: #fff;
+}
+
+.p2 {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.p3 {
+  background: var(--surface);
+  border-color: var(--chip-p3-border);
+  color: var(--chip-p3-text);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-field);
+  background: var(--ground);
+}
+
+.note {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.inlineLink {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line-soft);
+  background: none;
+  text-align: left;
+  color: var(--ink);
+}
+
+.option svg {
+  color: var(--muted);
+}
+
+.optionLabel {
+  flex: 1;
+  font-size: 16px;
+}
+
+.optionValue {
+  font-size: 14px;
+  color: var(--muted);
+}
