@@ -1,0 +1,60 @@
+.aside {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lateCard {
+  padding: 4px 16px;
+}
+
+.listCard {
+  padding: 4px 16px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0 0;
+}
+
+.summaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: var(--tap);
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
+.summaryButton:hover {
+  color: var(--ink);
+}
+
+.doneList {
+  display: flex;
+  flex-direction: column;
+  padding: 0 4px;
+}
+
+.review {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: center;
+  min-height: var(--tap);
+  padding: 0 12px;
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+}
