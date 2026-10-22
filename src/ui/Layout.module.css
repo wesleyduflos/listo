@@ -1,0 +1,130 @@
+.screen {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: calc(52px + var(--safe-top)) var(--gutter)
+    calc(var(--nav-height) + var(--safe-bottom) + 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.noNav {
+  padding-bottom: calc(32px + var(--safe-bottom));
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 4px 6px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--fs-screen-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.meta {
+  font-size: var(--fs-meta);
+  color: var(--muted);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  min-height: var(--tap);
+  margin: -8px 0 -4px -8px;
+  padding: 0 8px;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.overline {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 4px 0;
+  font-size: var(--fs-overline);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.overlineAside {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.iconButton {
+  display: grid;
+  place-items: center;
+  width: var(--tap);
+  height: var(--tap);
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.iconButton:hover {
+  background: var(--surface-sunken);
+  color: var(--ink);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line-soft);
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  font-size: var(--fs-body);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.rowLabel {
+  flex: 1;
+  min-width: 0;
+}
+
+.rowValue {
+  color: var(--muted);
+  font-size: 14px;
+  text-align: right;
+}
+
+.empty {
+  padding: 20px 4px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}

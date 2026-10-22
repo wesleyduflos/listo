@@ -1,0 +1,26 @@
+.chip {
+  flex: none;
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 14px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.p1 {
+  background: var(--ink);
+  color: #fff;
+}
+
+.p2 {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.p3 {
+  border-color: var(--chip-p3-border);
+  color: var(--chip-p3-text);
+}

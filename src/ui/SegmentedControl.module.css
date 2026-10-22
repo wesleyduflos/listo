@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: var(--radius-field);
+  background: var(--surface-sunken);
+}
+
+.item {
+  flex: 1;
+  min-height: 38px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.active {
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: var(--shadow-segment);
+}

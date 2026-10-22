@@ -1,0 +1,67 @@
+:root {
+  /* Colors (§8.1) */
+  --ground: #f2f3ef;
+  --surface: #ffffff;
+  --surface-sunken: #e4e6e1;
+  --ink: #15171c;
+  --muted: #5b606b;
+  --line: #dde0da;
+  --line-soft: #e6e8e3;
+  --check-border: #9aa0a9;
+
+  --accent: #2443d1;
+  --accent-hover: #1a33a6;
+  --accent-soft: #e3e8fb;
+  --accent-on-dark: #9db0ff;
+  --on-accent: #ffffff;
+
+  --dark-muted: #aeb3bc;
+  --dark-track: #2c3038;
+  /* Values found in the mockups and promoted to tokens. */
+  --dark-cell: #3a3f48;
+  --dark-text-soft: #c9cdd4;
+  --dark-check-border: #6b717c;
+
+  --late: #b3401a;
+  --late-text: #8f3315;
+  --late-soft: #fbe7de;
+
+  --chip-p3-border: #b9bdb5;
+  --chip-p3-text: #4a4f58;
+
+  --scrim: rgba(21, 23, 28, 0.45);
+
+  /* Typography (§8.2) */
+  --font-sans: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', monospace;
+  --fs-screen-title: 30px;
+  --fs-prep-title: 26px;
+  --fs-task: 16px;
+  --fs-body: 15px;
+  --fs-meta: 12px;
+  --fs-overline: 12px;
+
+  /* Shapes & spacing (§8.3) */
+  --radius-card: 16px;
+  --radius-card-sm: 14px;
+  --radius-field: 12px;
+  --radius-button: 14px;
+  --radius-fab: 16px;
+  --radius-sheet: 22px;
+  --radius-pill: 999px;
+  --radius-check-square: 5px;
+  --gutter: 16px;
+  --gutter-wide: 20px;
+  --shadow-card: 0 1px 2px rgba(21, 23, 28, 0.05);
+  --shadow-segment: 0 1px 2px rgba(21, 23, 28, 0.08);
+  --shadow-fab: 0 6px 18px rgba(36, 67, 209, 0.35);
+  --shadow-sheet: 0 -8px 30px rgba(21, 23, 28, 0.12);
+  --tap: 44px;
+
+  --nav-height: 72px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-check: 200ms;
+}

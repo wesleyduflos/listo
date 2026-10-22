@@ -1,0 +1,85 @@
+.box {
+  position: relative;
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: var(--tap);
+  height: var(--tap);
+  margin: -10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--check-border);
+  background: var(--surface);
+  color: var(--on-accent);
+  transition:
+    background-color var(--dur-check) var(--ease-out),
+    border-color var(--dur-check) var(--ease-out);
+}
+
+.square .mark {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-check-square);
+}
+
+.square {
+  margin: -13px;
+}
+
+.late .mark {
+  border-color: var(--late);
+}
+
+.dark .mark {
+  background: transparent;
+  border-color: var(--dark-check-border);
+}
+
+.checked .mark {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.checked.animate .mark {
+  animation: pop var(--dur-check) var(--ease-out);
+}
+
+.path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+}
+
+.checked .path {
+  stroke-dashoffset: 0;
+}
+
+.checked.animate .path {
+  animation: draw var(--dur-check) var(--ease-out);
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

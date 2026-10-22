@@ -1,0 +1,33 @@
+.ring {
+  flex: none;
+  display: block;
+}
+
+.track {
+  stroke: var(--line);
+}
+
+.value {
+  stroke: var(--accent);
+  transition: stroke-dashoffset 400ms var(--ease-out);
+}
+
+.text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--ink);
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.caption {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+}

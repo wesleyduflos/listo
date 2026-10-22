@@ -1,0 +1,33 @@
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.flush {
+  padding: 0;
+}
+
+.dark {
+  background: var(--ink);
+  color: #fff;
+}
+
+.late {
+  background: var(--late-soft);
+}
+
+.accent {
+  background: var(--accent-soft);
+  box-shadow: none;
+}
+
+.interactive {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  font: inherit;
+  color: inherit;
+}
