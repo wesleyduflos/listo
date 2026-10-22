@@ -30,7 +30,7 @@ export function LoginScreen() {
   return (
     <main className={styles.screen}>
       <div className={styles.brand}>
-        <img src="/icons/icon.svg" alt="" width={72} height={72} className={styles.logo} />
+        <img src="/icons/icon.svg" alt="" width={88} height={88} className={styles.logo} />
         <h1 className={styles.name}>Listo</h1>
         <p className={styles.tagline}>Vos listes, prêtes à temps.</p>
       </div>
